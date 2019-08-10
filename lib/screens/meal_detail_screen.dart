@@ -79,7 +79,9 @@ class MealDetailScreen extends StatelessWidget {
                       ),
                       title: Text(selectedMeal.steps[index]),
                     ),
-                    Divider(color: Colors.grey,),
+                    Divider(
+                      color: Colors.grey,
+                    ),
                   ],
                 ),
                 itemCount: selectedMeal.ingredients.length,
@@ -87,6 +89,12 @@ class MealDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.delete),
+        onPressed: () {
+          Navigator.of(context).pop(mealId); // executed in then operator of pushNamed of parent.. returns mealId
+        },
       ),
     );
   }
